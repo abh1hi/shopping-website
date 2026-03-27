@@ -28,6 +28,7 @@ export default defineNuxtConfig({
   ],
   studio: {
     route: '/_studio',
+    dev: true,
     repository: {
       provider: 'github',
       owner: 'abh1hi',
@@ -35,6 +36,7 @@ export default defineNuxtConfig({
       branch: 'main'
     }
   },
+
   content: {
     // Content options
   },
