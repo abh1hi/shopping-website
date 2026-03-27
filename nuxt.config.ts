@@ -23,16 +23,25 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-studio'
   ],
-  content: {
-    preview: {
-      api: 'https://api.nuxt.studio'
+  studio: {
+    route: '/_studio',
+    repository: {
+      provider: 'github',
+      owner: 'abh1hi',
+      repo: 'shopping-website',
+      branch: 'main'
     }
+  },
+  content: {
+    // Content options
   },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true }
 })
+
 
 
 
