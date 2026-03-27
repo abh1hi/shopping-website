@@ -1,0 +1,124 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --near-white: #fafafa;
+  --near-black: #1a1a1a;
+  --border-color: #ededed;
+  --text-primary: #111111;
+  --text-secondary: #666666;
+  --transition-smooth: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --font-serif: 'EB Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Typography Utilities */
+.text-xs { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.25rem; }
+.text-xl { font-size: 1.5rem; }
+.text-2xl { font-size: 2rem; }
+.text-display { font-size: clamp(2.5rem, 8vw, 6rem); }
+
+/* Layout Utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.grid { display: grid; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-8 { gap: 2rem; }
+
+/* Section Styles */
+section {
+  padding: 8rem 0;
+}
+
+/* Image Utilities */
+.img-container {
+  overflow: hidden;
+  position: relative;
+  background: var(--near-white);
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 1.2s var(--transition-smooth);
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeInUp 1s var(--transition-smooth) forwards;
+}
+
+[data-scroll] {
+  opacity: 0;
+  transition: opacity 1s var(--transition-smooth), transform 1s var(--transition-smooth);
+  transform: translateY(30px);
+}
+
+[data-scroll].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
