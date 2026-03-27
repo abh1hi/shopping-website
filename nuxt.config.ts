@@ -23,14 +23,16 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   modules: [
-    '@nuxt/content',
-    '@nuxthq/studio'
+    '@nuxt/content'
   ],
   content: {
-    // Content options
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
   },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true }
 })
+
 
 
